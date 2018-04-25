@@ -10,7 +10,9 @@ services:
             args:
                 http_proxy: $http_proxy
                 https_proxy: $https_proxy 
-        command: python3 manage.py runserver 0.0.0.0:8000
+        command: >
+            bash -c "python manage.py runserver 0.0.0.0:8000
+            && python manage.py sqlmigrate blog 0001"
         volumes:
         - .:/code
         ports:
