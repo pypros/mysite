@@ -2,6 +2,6 @@
  ENV PYTHONUNBUFFERED 1
  RUN mkdir /code
  WORKDIR /code
- ADD requirements.txt /code/
- RUN pip install -r requirements.txt
+ ADD requirements/base.txt /code/
+ RUN pip install -r base.txt
  ADD . /code/
